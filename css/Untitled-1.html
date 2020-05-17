@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>食</title>
+<script src="jquery.js"></script>
+	<script src="../js/modernizr.custom.js"></script>
+		<style>
+	<!--
+*{
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+    text-decoration: none;
+}
+#flash{ /*根据图片的大小来设置外层div的大小*/
+    width: 620px;
+    height: 380px;
+    margin: 0 auto;
+    position: relative; /*设置div定位，方便之后图片及圆点位置的设定*/
+    border:1px solid black;
+}
+#flash img{
+    width: 100%;
+    height: 100%;
+    position: absolute; /*设置所有图片重叠*/
+    left: 0px;
+    top: 0px;
+    display: none; /*设置所有图片隐藏，通过改变第一个图片的行间样式来使第一个图片显示*/
+}
+#flash ul{
+    width: 150px;
+    height: 25px;
+    border-radius: 20px;
+    background-color:rgba(255,255,255,0.5);
+    position: absolute;
+    left: 35%;
+    bottom: 10%;
+}
+#flash ul li{
+    width: 12px;
+    height: 12px;
+    margin-top:5px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 15px;
+    float: left;
+}
+#flash ul .li_1{
+    background-color: #f40; /*设置第一个圆点背景色为红色*/
+}
+#flash .span-r{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 2%;
+    top: 45%;
+    background-color: rgba(255,255,255,0.5);
+}
+#flash .span-r span{
+    width: 100%;
+    height:100%;
+    color:rgba(0,0,0,0.5);
+    font-size: xx-large;
+    font-weight: 700;
+    line-height: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+#flash .span-l{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 2%;
+    top: 45%;
+    background-color: rgba(255,255,255,0.5);
+}
+#flash .span-l span{
+    width: 100%;
+    height:100%;
+    color:rgba(0,0,0,0.5);
+    font-size: xx-large;
+    font-weight: 700;
+    line-height: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+	.backgroundofnavigaton
+{
+margin:0 auto;
+
+padding:10px;
+background-color:#DFEEF2;
+}/*导航栏背景样式的设置*/
+		.background
+{
+background-color:rgba(163,221,221,1.00);
+margin:0 auto;
+}/*背景样式的设置*/
+	a:link,a:visited
+{
+font-weight:bold;
+color:#FFFFFF;/*导航栏内字体的颜色，样式*/
+background-color:#BED6E4;/*导航栏背景方框的颜色*/
+text-align:center;
+padding:6px;
+text-decoration:none;
+text-transform:uppercase;
+}/*导航栏样式的设置*/
+        a:hover,a:active{background-color:#B0CCC9;}/*鼠标覆盖上去的颜色显示*/
+	h1{font-size: 100px;color:#FFFFFF;}
+	input{
+		   width: 250px;
+	       height:40px;
+	       border:1px solid #7ecc0b;
+		
+	       border-right: none;
+	       border-radius: 4px;
+		   }/*搜索栏的设置*/
+	    button{
+	       position:relative;
+	       right: 2px;
+	       width: 50px;
+	       height: 35px;
+	       font-size: 14px;
+	       color: white;
+	       background:#7fcc0b;
+	       border:0;
+	       border-radius: 4px
+		   }/*搜索按钮的设置*/
+			.text{text-indent:2em;
+		 font-family: "KaiTi" ;
+	     font-size: 24px;
+		 line-height: 40px;
+		}
+	.lastcontent{
+			font-family: "KaiTi";
+			font-weight:bold;
+			font-size:18px;
+			text-align:center;
+		    }
+		.backgroundoffooter{
+			/*width: 750px;*/
+			background-color: aliceblue;
+			margin: 0 auto;
+			padding:10px;
+		    }/*页脚的样式设置*/
+	
+	
+	
+    /* 通用样式 */
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+body {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	color: #b3b9bf;
+	background: #f9f9f9;
+}
+a {
+	color: #888;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #333;
+}
+
+.grid {
+	padding: 20px 20px 100px 20px;
+	max-width: 1300px;
+	margin: 0 auto;
+	list-style: none;
+	text-align: center;
+}
+
+.grid li {
+	display: inline-block;
+	width: 440px;
+	margin: 0;
+	padding: 20px;
+	text-align: left;
+	position: relative;
+}
+
+.grid figure {
+	margin: 0;
+	position: relative;
+}
+
+.grid figure img {
+	max-width: 100%;
+	display: block;
+	position: relative;
+}
+
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #2c3f52;
+	color: #ed4e6e;
+}
+
+.grid figcaption h3 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+.grid figcaption span:before {
+	content: ' ';
+}
+
+.grid figcaption a {
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	background: #ed4e6e;
+	color: #fff;
+}
+   
+/* 说明文字样式 3 */
+.cs-style-3 figure {
+	overflow: hidden;
+}
+
+.cs-style-3 figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure.cs-hover img {
+	-webkit-transform: translateY(-50px);
+	-moz-transform: translateY(-50px);
+	-ms-transform: translateY(-50px);
+	transform: translateY(-50px);
+}
+
+.cs-style-3 figcaption {
+	height: 100px;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-3 figcaption a {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}  
+			.background3{background-image: url("../image/201820140309-lili-0658.png");width: 1920;height: 380;}
+	-->
+</style>
+	<body>
+		<div>
+		<!--<div class="background">-->
+			<hr style="height:1px;border:none;border-top:10px ridge #DFEEF2;" />
+			<!--<img src="image/201820140309-lili-0636.jpg" width="240" height="133" alt=""/>
+		<span style="font-size: 120px" >乐山旅游网</span>
+		<img src="image/201820140309-lili-0631.png" width="90" height="101" alt=""/>-->
+			
+			<div style="float:right"><!--搜索框靠右-->
+			<input type="" name="" id="" value="" /><button type="button">搜索</button>
+			</div>
+			
+		
+			<header>
+			<div class="backgroundofnavigaton">
+				
+				<span style="font-size: 28px"><a href="../Index.html">网站首页</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-size: 28px"><a href="Untitled-2.html">知名景点</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-size: 28px"><a href="#食">&nbsp;&nbsp;乐山美食</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!--<span style="font-size: 28px"><a href="http://shop.bytravel.cn/produce/index478.html">乐山特产</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<span style="font-size: 28px"><a href="Untitled-3.html">住宿服务</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-size: 28px"><a href="Untitled-4.html">推荐路线</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!--<span style="font-size: 28px"><a href="http://www.mafengwo.cn/yj/11273/4-0-1.html">乐山游记</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+			
+					</div>
+			</header>
+
+		<div>
+			<div class="background3">
+			<ul class="grid cs-style-3">
+				<section>
+				
+				<li>
+				
+					<a name="食"><h1>食</h1></a>
+					<figure>
+						
+						<img src="../image/201820140309-lili-0601.jpg" alt="img04">
+						<figcaption>
+							<h3>乐山钵钵鸡</h3>
+							<span>皮脆肉嫩、麻辣鲜香、甜咸适中<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0607.html">查看更多</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../image/201820140309-lili-0604.jpg" alt="img04">
+						<figcaption>
+							<h3>牛华豆腐脑</h3>
+							<span>咸淡适口、细嫩鲜美<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0608.html">查看更多</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../image/201820140309-lili-0607.jpg" alt="img04">
+						<figcaption>
+							<h3>笼蒸牛肉</h3>
+							<span>细嫩滑软、入口即化、老少皆宜<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0615.html">查看更多</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../image/201820140309-lili-0610.jpg" alt="img04">
+						<figcaption>
+							<h3>牛华麻辣烫</h3>
+							<span>麻辣鲜香、口感纯正、唇齿留香<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0609.html">查看更多</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../image/201820140309-lili-0615.jpg" alt="img04">
+						<figcaption>
+							<h3>翘脚牛肉</h3>
+							<span>汤色碧清、香味绵长、牛杂脆嫩<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0610.html">查看更多</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../image/201820140309-lili-0616.jpg" alt="img04">
+						<figcaption>
+							<h3>甜水鸭</h3>
+							<span>色泽棕红、皮酥略甜、肉质细嫩、<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0611.html">查看更多</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../image/201820140309-lili-0621.jpg" alt="img04">
+						<figcaption>
+							<h3>西坝豆腐</h3>
+							<span>细若凝脂、洁白如玉、清鲜柔嫩<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0612.html">查看更多</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../image/201820140309-lili-0625.jpg" alt="img04">
+						<figcaption>
+							<h3>叶儿粑</h3>
+							<span>清香滋润、细软爽口、荷香味浓<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0613.html">查看更多</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../image/201820140309-lili-0627.jpg" alt="img04">
+						<figcaption>
+							<h3>油炸串串</h3>
+							<span>鲜嫩多汁、外焦里嫩、物美价廉<br>推荐指数：★★★★★</span>
+							<a href="201820140309-lili-0614.html">查看更多</a>
+						</figcaption>
+					</figure>
+					</li>
+			</section>
+			</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	</head>
+</html>

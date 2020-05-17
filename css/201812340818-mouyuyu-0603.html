@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>乐山旅游网</title>
+<script src="jquery.js"></script>
+	<script src="201820140309-lili-0601/modernizr.custom.js"></script>
+		<style type="text/css" >
+<style>
+	<!--
+*{
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+	.backgroundofnavigaton
+{
+margin:0 auto;
+
+padding:10px;
+background-color:#367EC1;
+}/*导航栏背景样式的设置*/
+		.background
+{
+background-color:rgba(163,221,221,1.00);
+margin:0 auto;
+}/*背景样式的设置*/
+	a:link,a:visited
+{
+font-weight:bold;
+color:#FFFFFF;/*导航栏内字体的颜色，样式*/
+background-color:#340C8C;/*导航栏背景方框的颜色*/
+text-align:center;
+padding:6px;
+text-decoration:none;
+text-transform:uppercase;
+}/*导航栏样式的设置*/
+        a:hover,a:active{background-color:#3CA0B8;}/*鼠标覆盖上去的颜色显示*/
+	h1{font-size: 100px}
+	input{
+		   width: 250px;
+	       height:40px;
+	       border:1px solid #7ecc0b;
+		
+	       border-right: none;
+	       border-radius: 4px;
+		   }/*搜索栏的设置*/
+	    button{
+	       position:relative;
+	       right: 2px;
+	       width: 50px;
+	       height: 35px;
+	       font-size: 14px;
+	       color: white;
+	       background:#7fcc0b;
+	       border:0;
+	       border-radius: 4px
+		   }/*搜索按钮的设置*/
+	
+	
+    /* 通用样式 */
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+body {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	color: #b3b9bf;
+	background: #f9f9f9;
+}
+a {
+	color: #888;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #333;
+}
+
+.grid {
+	padding: 20px 20px 100px 20px;
+	max-width: 1300px;
+	margin: 0 auto;
+	list-style: none;
+	text-align: center;
+}
+
+.grid li {
+	display: inline-block;
+	width: 440px;
+	margin: 0;
+	padding: 20px;
+	text-align: left;
+	position: relative;
+}
+
+.grid figure {
+	margin: 0;
+	position: relative;
+}
+
+.grid figure img {
+	max-width: 100%;
+	display: block;
+	position: relative;
+}
+
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #2c3f52;
+	color: #ed4e6e;
+}
+
+.grid figcaption h3 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+.grid figcaption span:before {
+	content: ' ';
+}
+
+.grid figcaption a {
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	background: #ed4e6e;
+	color: #fff;
+}
+   
+/* 说明文字样式 3 */
+.cs-style-3 figure {
+	overflow: hidden;
+}
+
+.cs-style-3 figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure.cs-hover img {
+	-webkit-transform: translateY(-50px);
+	-moz-transform: translateY(-50px);
+	-ms-transform: translateY(-50px);
+	transform: translateY(-50px);
+}
+
+.cs-style-3 figcaption {
+	height: 100px;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-3 figcaption a {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}  
+	-->
+</style>
+</head>
+	<body>
+		<div class="background">
+			<hr style="height:1px;border:none;border-top:10px ridge #340C8C;" />
+			<img src="201820140309-lili-0636.jpg" width="236.7" height="133.3" alt=""/>
+		<span style="font-size: 120px">乐山旅游网</span>
+		<img src="201820140309-lili-0631.png" width="89.8" height="101" alt=""/>
+			
+			<div style="float:right"><!--搜索框靠右-->
+			<input type="" name="" id="" value="" /><button type="button">搜索</button>
+			</div>
+			
+		
+			<header>
+			<div class="backgroundofnavigato">
+				
+				
+					</div>
+			</header>
+
+<div id="flash">
+	
+		<div>
+			<ul class="grid cs-style-3">
+			<h1>住</h1>
+<li>
+					<figure>
+						<img src="201812340818-mouyuyu-0607.jpg">
+						
+							<h3>乐山盘龙银座酒店</h3>
+							<span>酒店类似于小别墅，价格也相对较高，适合团体的旅行住宿<br><br>
+							推荐指数：★★★</span>
+							<a href="201812340818-mouyuyu-0609.html">查看更多</a>
+						
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="201812340818-mouyuyu-0613.jpg" >
+					
+							<h3>桔子酒店·精选（乐山嘉定中路店）</h3>
+							<span>一家中式园林休闲度假酒店，以书院文化和以“琴、棋、书、画、曲、绣”九雅文化为主题房型<br><br>
+							推荐指数：★★★</span>
+							<a href="201812340818-mouyuyu-0611.html">查看更多</a>
+						
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="201812340818-mouyuyu-0612.jpg">
+						
+							<h3>乐山嘉韵·明台酒店</h3>
+							<span>乐山第一家以北欧与原生态结合风格的酒店<br><br>
+								推荐指数：★★★★★</span>
+						
+							<a href="201812340818-mouyuyu-0613.html">查看更多</a>
+					
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="201812340818-mouyuyu-0617.jpg">
+						
+							<h3>山水s酒店（乐山大佛店）</h3>
+							<span>一座古老的城池，一树一木，一砖一瓦都写满了诗意的沧桑<br><br>
+							推荐指数：★★★★</span>
+							<a href="201812340818-mouyuyu-0612.html">查看更多</a>
+						
+					</figure>
+				</li>
+			    <li>
+					<figure>
+						<img src="201812340818-mouyuyu-0608.jpg" >
+						
+							<h3>乐山禅驿·嘉定院子酒店</h3>
+							<span>酒店1公里范围内包含了所有乐山美食<br><br>
+							推荐指数：★★★★</span>
+							<a href="201812340818-mouyuyu-0610.html">查看更多</a>
+						
+					</figure>
+				</li>
+			   <li>
+					<figure>
+						<img src="201812340818-mouyuyu-0609.jpg" >
+					
+							<h3>乐山FODI福地驿站</h3>
+							<span>驿站坐落于乐山，配有花园和免费WiFi,提供阳光露台<br><br>
+							推荐指数：★★★★</span>
+							<a href="201812340818-mouyuyu-0615.html">查看更多</a>
+						
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="201812340818-mouyuyu-0610.jpg" >
+						
+							<h3>和夷客栈</h3>
+							<span>俯瞰着乐山大佛,设有一个共用厨房和一间游戏室<br><br>
+							推荐指数：★★★</span>
+							<a href="201812340818-mouyuyu-0614.html">查看更多</a>
+						
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="201812340818-mouyuyu-0616.jpg">
+						
+							<h3>弄山峨眉山民宿</h3>
+							<span>位于峨眉山核心景区，大隐于世，一步繁华,品山泉泡茶，尝有机蔬菜，择山而居<br><br>
+							推荐指数：★★★★</span>
+							<a href="201812340818-mouyuyu-0616.html">查看更多</a>
+						
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="201812340818-mouyuyu-0614.jpg" >
+						
+							<h3>乐山M&E民宿</h3>
+							<span>宿装修风格非常的小清新，ins风很适合喜欢拍照的旅客<br><br>
+							推荐指数：★★★★★</span>
+							<a href="201812340818-mouyuyu-0617.html">查看更多</a>
+					
+					</figure>
+				</li> 
+			</ul>
+		   </div>
+	</body>
+			</html>
+	
